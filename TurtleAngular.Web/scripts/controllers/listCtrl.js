@@ -2,7 +2,6 @@
 
 (function () {
 
-
     var turtlesData = [
         {
             type: "Green Turtle",
@@ -78,7 +77,6 @@
         }
     ];
 
-
     angular.module("turtleApp", [])
            .controller("listCtrl", listController);
     function listController($scope) {
@@ -86,6 +84,10 @@
         var vm = this;
         vm.dummyData = "Hello Toan";
         vm.data = turtlesData;
+        vm.activeTurtle = {};
+        vm.changeActiveTurtle = function (turtleItem) {
+            vm.activeTurtle = turtleItem;
+        }
     }
 })();
 
