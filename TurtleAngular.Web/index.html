@@ -9,7 +9,7 @@
     <link type="text/css" rel="stylesheet" href="Content/style.css" />
 </head>
 <body>
-    <div ng-controller="listCtrl as list" ng-hide="list.quizActive" class="container">
+    <div ng-controller="listCtrl as list" ng-hide="list.quizMetrics.quizActive" class="container">
         <div class="page-header">
             <h1>Turtle Facts Quiz</h1>
             <h3>
@@ -25,7 +25,7 @@
             </button>
         </form>
         <div class="row">
-            <div class="col-sm-6" ng-repeat="turtle in list.data | filter:list.search">
+            <div class="col-sm-6" ng-repeat="turtle in list.data">
                 <div class="well well-sm">
                     <div class="row">
                         <div class="col-md-6">
@@ -54,7 +54,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2">
-                                <img ng-src="{{list.activeTurtle.image_url}}" class="img-rounded img-responsive"/>
+                                <img ng-src="{{list.activeTurtle.image_url}}" class="img-rounded img-responsive" />
                             </div>
                         </div>
                         <div class="row top-buffer">
@@ -76,14 +76,12 @@
                 </div>
             </div>
         </div>
-    </div> <!-- the End of list controller -->
-    <div ng-controller="quizCtrl as quiz"></div>
+    </div>
     <script src="scripts/angular.min.js"></script>
     <script src="scripts//jquery-1.9.1.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/listCtrl.js"></script>
-    <script src="scripts/controllers/quizCtrl.js"></script>
     <script src="scripts/factories/quizmetrics.js"></script>
 </body>
 </html>

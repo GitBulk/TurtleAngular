@@ -79,7 +79,9 @@
 
     angular.module("turtleApp", [])
            .controller("listCtrl", listController);
-    function listController($scope) {
+
+    listController.$inject = ['quizMetrics'];
+    function listController(quizMetrics) {
         //$scope.dummyData = "Hello world";
         var vm = this;
         vm.dummyData = "Hello Toan";
@@ -87,11 +89,12 @@
         vm.data = turtlesData;
         vm.activeTurtle = {};
         vm.quizActive = false;
+        vm.quizMetrics = quizMetrics;
         vm.changeActiveTurtle = function (turtleItem) {
             vm.activeTurtle = turtleItem;
         }
         vm.activateQuiz = function () {
-            vm.quizActive = true;
+            quizMetrics.changeState(true);
         }
     }
 })();

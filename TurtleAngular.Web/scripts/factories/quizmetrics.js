@@ -5,8 +5,13 @@
         .factory("quizMetrics", quizMetrics);
     function quizMetrics() {
         var quizObj = {
-            quizActive: false
+            quizActive: false,
+            changeState: changeState
         };
         return quizObj;
+
+        function changeState() {
+            quizObj.quizActive = true;
+        }
     }
 })()
