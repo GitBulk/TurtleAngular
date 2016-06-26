@@ -83,10 +83,15 @@
         //$scope.dummyData = "Hello world";
         var vm = this;
         vm.dummyData = "Hello Toan";
+        vm.search = "";
         vm.data = turtlesData;
         vm.activeTurtle = {};
+        vm.quizActive = false;
         vm.changeActiveTurtle = function (turtleItem) {
             vm.activeTurtle = turtleItem;
+        }
+        vm.activateQuiz = function () {
+            vm.quizActive = true;
         }
     }
 })();
