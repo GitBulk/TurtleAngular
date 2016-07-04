@@ -4,8 +4,12 @@
 
     angular.module("turtleApp", [])
            .controller("quizCtrl", quizController);
-    function quizController($scope) {
+    quizController.$inject = ['quizMetrics', 'dataService'];
+
+    function quizController(quizMetrics, dataService) {
         var vm = this;
+        vm.quizMetrics = quizMetrics;
+        vn.dataService = dataService;
     }
 })();
 

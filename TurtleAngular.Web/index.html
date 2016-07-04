@@ -25,7 +25,7 @@
             </button>
         </form>
         <div class="row">
-            <div class="col-sm-6" ng-repeat="turtle in list.data">
+            <div class="col-sm-6" ng-repeat="turtle in list.data | filter:list.search">
                 <div class="well well-sm">
                     <div class="row">
                         <div class="col-md-6">
@@ -83,5 +83,6 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/listCtrl.js"></script>
     <script src="scripts/factories/quizmetrics.js"></script>
+    <script src="scripts/factories/dataService.js"></script>
 </body>
 </html>

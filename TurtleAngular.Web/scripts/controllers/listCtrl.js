@@ -80,13 +80,13 @@
     angular.module("turtleApp", [])
            .controller("listCtrl", listController);
 
-    listController.$inject = ['quizMetrics'];
-    function listController(quizMetrics) {
+    listController.$inject = ['quizMetrics', 'dataService'];
+    function listController(quizMetrics, dataService) {
         //$scope.dummyData = "Hello world";
         var vm = this;
         vm.dummyData = "Hello Toan";
         vm.search = "";
-        vm.data = turtlesData;
+        vm.data = dataService.turtlesData;
         vm.activeTurtle = {};
         vm.quizActive = false;
         vm.quizMetrics = quizMetrics;
