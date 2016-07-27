@@ -5,6 +5,6 @@
 (function () {
     // angular code
     'use strict';
-    angular.module("turtleApp", []);
+    angular.module("turtleApp",[]);
 })();
 

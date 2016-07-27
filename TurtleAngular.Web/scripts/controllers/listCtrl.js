@@ -77,7 +77,7 @@
         }
     ];
 
-    angular.module("turtleApp", [])
+    angular.module("turtleApp")
            .controller("listCtrl", listController);
 
     listController.$inject = ['quizMetrics', 'dataService'];
